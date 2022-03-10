@@ -62,12 +62,14 @@ crashlytics-build.properties
 ##   WWise stuff    ##
 ## ---------------- ##
 
+# Modify "WWiseProject/" below to be the path to your .wproj folder inside your Unity assets
+
 # project stuff
-WWiseProject/.cache/
-WWiseProject/*.prof
-WwiseProject/*_WwiseProject.*.validationcache
-WwiseProject/*_WwiseProject.*.wsettings
-WwiseProject/**/*.akd
+McGame_Jam_ERE_Unity_WwiseProject/.cache/
+McGame_Jam_ERE_Unity_WwiseProject/*.prof
+McGame_Jam_ERE_Unity_WwiseProject/*_WwiseProject.*.validationcache
+McGame_Jam_ERE_Unity_WwiseProject/*_WwiseProject.*.wsettings
+McGame_Jam_ERE_Unity_WwiseProject/**/*.akd
 
 # build stuff (unsure?)
 # Assets/Wwise/Deployment/Plugins/Windows/**/*.meta
