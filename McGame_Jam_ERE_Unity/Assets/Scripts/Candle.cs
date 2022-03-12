@@ -12,7 +12,9 @@ public class Candle : MonoBehaviour
     // public Vector2 playerInput;
     public bool thrown = false;
     private Vector2 playerInput = new Vector2(0f, 0f);
-    
+    private Vector2 lastDir = new Vector2(1f, 0f);
+
+
 
     void Start()
     {
@@ -23,6 +25,11 @@ public class Candle : MonoBehaviour
     void OnMove(InputValue value)
     {
         playerInput = value.Get<Vector2>();
+        if (playerInput != new Vector2(0f, 0f))
+        {
+            lastDir = playerInput;
+        }
+
     }
     void OnThrow()
     {
@@ -36,7 +43,7 @@ public class Candle : MonoBehaviour
         }
         else
         {
-            throwVector = new Vector2(1f, 0f) * throwSpeed;
+            throwVector = lastDir * throwSpeed;
         }
 
         rb.velocity = new Vector2(throwVector.x + rbPlayer.velocity.x, throwVector.y);
