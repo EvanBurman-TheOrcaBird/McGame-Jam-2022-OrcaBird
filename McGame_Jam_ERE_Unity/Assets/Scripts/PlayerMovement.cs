@@ -5,10 +5,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 5f;
+    public float defaultSpeed = 5f;
+    public float speed;
     private Vector2 step;
 
-    public bool movingObj;
+    public bool movingBox;
 
     public float jumpHeight = 10f;
     public float jumpHeightCandle = 6f;
@@ -16,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 jumpSpeed;
     private bool jumping;
     private BoxCollider2D footCollider;
+    public CapsuleCollider2D handCollider;
+    private float offset;
     private Animator Animator;
     private Rigidbody2D rb;
 
@@ -24,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         footCollider = GetComponent<BoxCollider2D>();
         Animator = GetComponent<Animator>();
+        handCollider = GetComponents<CapsuleCollider2D>()[1]; // relies on order in inspector
+        offset = handCollider.offset.x;
+        speed = defaultSpeed;
 
     }
 
@@ -35,11 +41,12 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump()
     {
-        if (!footCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))){
+        if (!footCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) && !footCollider.IsTouchingLayers(LayerMask.GetMask("Boxes"))){
             return;
         }
         jumping = true;
-        movingObj = false;
+        movingBox = false;
+        speed = defaultSpeed;
     }
 
     void FixedUpdate()
@@ -56,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (step.x != 0)
         {
-            transform.localScale = new Vector2(Mathf.Sign(step.x), 1f);
+            if (!movingBox) { transform.localScale = new Vector2(Mathf.Sign(step.x), 1f); }
             Animator.SetBool("isRunning", true);
         }
         else
@@ -69,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(jumpSpeed, ForceMode2D.Impulse);
             jumping = false;
         }
-        if (!footCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { 
+        if (!footCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) && !footCollider.IsTouchingLayers(LayerMask.GetMask("Boxes"))) { 
             if (rb.velocity.y > 0)
             {
                 Animator.SetBool("isRising", true);
