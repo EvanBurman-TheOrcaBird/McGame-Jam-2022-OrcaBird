@@ -12,33 +12,38 @@ public class Box : MonoBehaviour
 
     private float boxWidth = 1f; // To be set depending on box size
     private float boxHeight = 1f;
-    private float heightThreshold = 0.2f;
     public Candle candle;
-    bool moveable;
+    public bool moveable;
     bool beingMoved;
+    private BoxCollider2D top;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.isKinematic = true;
         beingMoved = false;
+        rb.isKinematic = false;
+        top = GetComponents<BoxCollider2D>()[1]; // Depends on order in inspector
+        Physics2D.IgnoreCollision(rbPlayer.gameObject.GetComponent<BoxCollider2D>(), top);
     }
 
-    void OnCollisionEnter2D(Collision2D c)
+    void OnTriggerEnter2D(Collider2D c)
     {
-        if (c.collider.gameObject.name == "Player")
+        Debug.Log(c.gameObject.name);
+        if (c == rbPlayer.gameObject.GetComponent<PlayerMovement>().handCollider && candle.thrown)
         {
             moveable = true;
             Debug.Log(moveable);
         }
     }
 
-    void OnCollisionExit2D(Collision2D c)
+    void OnTriggerExit2D(Collider2D c)
     {
-        if (c.collider.gameObject.name == "Player")
+        if (c == rbPlayer.gameObject.GetComponent<PlayerMovement>().handCollider)
         {
             moveable = false;
-            rb.isKinematic = true; // In case
+            beingMoved = false;
+            rbPlayer.gameObject.GetComponent<PlayerMovement>().movingBox = false;
+            rbPlayer.gameObject.GetComponent<PlayerMovement>().speed = rbPlayer.gameObject.GetComponent<PlayerMovement>().defaultSpeed;
         }
     }
 
@@ -50,17 +55,16 @@ public class Box : MonoBehaviour
         }
         if (beingMoved)
         {
-            rb.isKinematic = true;
             beingMoved = false;
-            rbPlayer.gameObject.GetComponent<PlayerMovement>().movingObj = false;
+            rbPlayer.gameObject.GetComponent<PlayerMovement>().movingBox = false;
+            rbPlayer.gameObject.GetComponent<PlayerMovement>().speed = rbPlayer.gameObject.GetComponent<PlayerMovement>().defaultSpeed;
         }
 
-        else if (moveable && !rbPlayer.gameObject.GetComponent<PlayerMovement>().movingObj && (rbPlayer.transform.localPosition.y < rb.transform.localPosition.y + heightThreshold))
+        else if (moveable && !rbPlayer.gameObject.GetComponent<PlayerMovement>().movingBox && !top.IsTouchingLayers(LayerMask.GetMask("Boxes")))
         {
             beingMoved = true;
-            rb.isKinematic = false;
-            rb.WakeUp();
-            rbPlayer.gameObject.GetComponent<PlayerMovement>().movingObj = true;
+            rbPlayer.gameObject.GetComponent<PlayerMovement>().movingBox = true;
+            rbPlayer.gameObject.GetComponent<PlayerMovement>().speed = 1;
 
         }
     }
@@ -68,15 +72,19 @@ public class Box : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (beingMoved)
+        if (beingMoved && rbPlayer.gameObject.GetComponent<PlayerMovement>().movingBox)
         {   
             if (rb.transform.localPosition.x > rbPlayer.transform.localPosition.x) 
             {
-                rb.transform.localPosition = new Vector2(rbPlayer.transform.localPosition.x + (0.5f + (boxWidth / 2)), rb.transform.localPosition.y);
+                rb.transform.localPosition = new Vector2(rbPlayer.transform.localPosition.x + (0.6f + (boxWidth / 2)), rb.transform.localPosition.y);
             } else
             {
-                rb.transform.localPosition = new Vector2(rbPlayer.transform.localPosition.x - (0.5f + (boxWidth / 2)), rb.transform.localPosition.y);
+                rb.transform.localPosition = new Vector2(rbPlayer.transform.localPosition.x - (0.6f + (boxWidth / 2)), rb.transform.localPosition.y);
             }
+        } 
+        else
+        {
+            beingMoved = false;
         }
     }
 }
