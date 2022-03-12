@@ -1,3 +1,32 @@
 Event	ID	Name			Wwise Object Path	Notes
-	3157003241	Test			\Default Work Unit\Test	
+	119526606	Acquire_Painting			\Default Work Unit\Game Elements\HeldItems\Painting\Acquire_Painting	
+	212838940	Ladder_Start			\Default Work Unit\Player\Movement\Ladder\Ladder_Start	
+	275249087	Unpause_Game			\Default Work Unit\UI\Unpause_Game	
+	327960653	Quit_Game			\Default Work Unit\UI\Quit_Game	
+	528278262	Pause_Game			\Default Work Unit\UI\Pause_Game	
+	636491075	Hazard_Electricity			\Default Work Unit\Game Elements\Hazards\Hazard_Electricity	
+	845776139	Painting_Land			\Default Work Unit\Game Elements\HeldItems\Painting\Painting_Land	
+	990219009	PushBigBox_Start			\Default Work Unit\Game Elements\Boxes\BigBox\PushBigBox_Start	
+	1072201837	Lamp_Land			\Default Work Unit\Game Elements\HeldItems\Lamp\Lamp_Land	
+	1114964412	Start_Game			\Default Work Unit\UI\Start_Game	
+	1258024580	BigBox_Land			\Default Work Unit\Game Elements\Boxes\BigBox\BigBox_Land	
+	1305133589	Player_Jump			\Default Work Unit\Player\Movement\Player_Jump	
+	1466213590	Pickup_Lamp			\Default Work Unit\Game Elements\HeldItems\Lamp\Pickup_Lamp	
+	1615164350	Checkpoint_Light			\Default Work Unit\Game Elements\Checkpoints\Checkpoint_Light	
+	1775861812	Menue_ButtonSelect			\Default Work Unit\UI\Menue_ButtonSelect	
+	1806862011	PushBigBox_Stop			\Default Work Unit\Game Elements\Boxes\BigBox\PushBigBox_Stop	
+	1990709034	Player_Throw_Painting			\Default Work Unit\Player\Object Interactions\Player_Throw_Painting	
+	2261947276	Box_Land			\Default Work Unit\Game Elements\Boxes\NormalBox\Box_Land	
+	2426835913	PushBox_Start			\Default Work Unit\Game Elements\Boxes\NormalBox\PushBox_Start	
+	2659619755	Checkpoint_Flicker_AMB			\Default Work Unit\Game Elements\Checkpoints\Checkpoint_Flicker_AMB	
+	2835330800	Ladder_Stop			\Default Work Unit\Player\Movement\Ladder\Ladder_Stop	
+	2909913294	HubRoom_Ambient			\Default Work Unit\Ambient\HubRoom_Ambient	
+	3003579385	Maze_Ambient			\Default Work Unit\Ambient\Maze_Ambient	
+	3092168424	Player_Throw_Lamp			\Default Work Unit\Player\Object Interactions\Player_Throw_Lamp	
+	3629196698	Player_Land			\Default Work Unit\Player\Movement\Player_Land	
+	3656110923	Lamp_Flicker_AMB			\Default Work Unit\Game Elements\HeldItems\Lamp\Lamp_Flicker_AMB	
+	3772385332	Pickup_Painting			\Default Work Unit\Game Elements\HeldItems\Painting\Pickup_Painting	
+	3997536611	PushBox_Stop			\Default Work Unit\Game Elements\Boxes\NormalBox\PushBox_Stop	
+	4118259557	Player_LandHard			\Default Work Unit\Player\Movement\Player_LandHard	
+	4276063004	Player_FS			\Default Work Unit\Player\Movement\Player_FS	
 
