@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
     private Vector2 step;
+    public Transform spawn;
 
     public bool movingObj;
 
@@ -24,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         footCollider = GetComponent<BoxCollider2D>();
         Animator = GetComponent<Animator>();
+        rb.transform.localPosition = spawn.position;
 
     }
 
@@ -94,8 +96,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (footCollider.IsTouchingLayers(LayerMask.GetMask("Hazards")))
         {
-            rb.transform.localPosition = new Vector2(0f, 0f);
+            rb.transform.localPosition = spawn.position;
+            candle.thrown = false;
             Debug.Log("death");
+            
         }
     }
 }
