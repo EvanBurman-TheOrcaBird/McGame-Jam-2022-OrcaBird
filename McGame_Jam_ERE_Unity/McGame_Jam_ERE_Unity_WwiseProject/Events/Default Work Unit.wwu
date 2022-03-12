@@ -3,7 +3,112 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{D6D5AD62-5D75-4B1F-AD0A-0A1401B50D81}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="Test" ID="{B68B401F-D75E-425E-B4EA-D5BD436CD38A}"/>
+				<Folder Name="Player" ID="{1055E9DC-A991-4BCE-9EAC-A29FA45013AE}" ShortID="226744136">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="12"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Folder Name="Movement" ID="{E0ED4158-E4DE-4B39-8E30-CC95C232AD97}" ShortID="250425851">
+							<ChildrenList>
+								<Event Name="Player_LandHard" ID="{58F690DA-A3B0-4707-B442-F90CD1E76EFB}"/>
+								<Event Name="Player_FS" ID="{5F16335A-8905-47A9-AA11-90BB6AA7E23B}"/>
+								<Event Name="Player_Land" ID="{38E85E96-ED2B-49A3-9E6D-9EB06425A253}"/>
+								<Event Name="Player_Jump" ID="{3439B042-77BA-4DD2-8DF1-B911000C74D7}"/>
+								<Folder Name="Ladder" ID="{63215165-3A1F-4E37-82A8-12DF9DBCDA1B}" ShortID="413580176">
+									<ChildrenList>
+										<Event Name="Ladder_Start" ID="{D246B112-E183-4603-9293-2020A68E33E5}"/>
+										<Event Name="Ladder_Stop" ID="{BE7EA5FD-7334-4067-A923-622EF537F2F7}"/>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Object Interactions" ID="{F7EC6FFE-9FB0-47EA-89DF-D2BD6C91BC9E}" ShortID="555757681">
+							<ChildrenList>
+								<Event Name="Player_Throw_Lamp" ID="{8D45DBC3-6666-4CB9-89E4-562762D351D0}"/>
+								<Event Name="Player_Throw_Painting" ID="{D3473BA9-882B-437E-8AAE-C41768F932B1}"/>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="UI" ID="{43171426-256B-475A-B80D-013434305B6C}" ShortID="401117564">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="19"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Event Name="Start_Game" ID="{C3C2E7AF-C35B-47D8-A282-3875FB31055D}"/>
+						<Event Name="Pause_Game" ID="{7580A272-E4B8-401B-BD08-B5D1D8AB9F3B}"/>
+						<Event Name="Unpause_Game" ID="{0D7FCE70-A1E6-4C58-A559-ABBA186C8F32}"/>
+						<Event Name="Quit_Game" ID="{0DBE69EA-E795-4B95-8594-5AEC1521342A}"/>
+						<Event Name="Menue_ButtonSelect" ID="{7AF93535-C502-49B0-9A8C-F9DB5BB17F61}"/>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Game Elements" ID="{5935D7E2-9C2F-468B-A581-02F4FF089F32}" ShortID="269282437">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="4"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Folder Name="Hazards" ID="{DB1DAFF8-FDCD-439D-8DA5-1E85F3F36577}" ShortID="674643606">
+							<ChildrenList>
+								<Event Name="Hazard_Electricity" ID="{0DFE535A-49E0-48D8-BAE8-988C2398DE93}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Checkpoints" ID="{251BBE58-FE1E-40BF-861A-0538F7D66728}" ShortID="440792074">
+							<ChildrenList>
+								<Event Name="Checkpoint_Light" ID="{A7272556-221D-46AA-8C6A-C8E246F168AA}"/>
+								<Event Name="Checkpoint_Flicker_AMB" ID="{77652AB5-7E1F-4943-B437-B7B539C2F1A1}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Boxes" ID="{C5EAC34E-1012-447E-B365-0A2F979FCF10}" ShortID="581989309">
+							<ChildrenList>
+								<Folder Name="BigBox" ID="{976B1EB8-DE74-46C7-B0AF-E3F9DA3AAAFA}" ShortID="1025313429">
+									<ChildrenList>
+										<Event Name="BigBox_Land" ID="{DCE80DA5-767D-4081-86BF-0ED33FC4B874}"/>
+										<Event Name="PushBigBox_Start" ID="{AC28E7D2-88F6-4322-BFAE-3E09D21FB324}"/>
+										<Event Name="PushBigBox_Stop" ID="{BEA458A0-B46B-469E-87D1-37993AF05421}"/>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="NormalBox" ID="{9567C64D-08A0-4BD6-BF08-95460093E1C4}" ShortID="667141093">
+									<ChildrenList>
+										<Event Name="Box_Land" ID="{90E9A933-2D8E-49B7-ADB9-C185924AD394}"/>
+										<Event Name="PushBox_Start" ID="{C6FE0702-99B7-4EEC-AAAA-9832A7505044}"/>
+										<Event Name="PushBox_Stop" ID="{CFD2EFB2-E746-472C-A1CD-3C51260403FB}"/>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="HeldItems" ID="{CABD4456-B941-42BA-ADBF-33B91F0CD406}" ShortID="846636955">
+							<ChildrenList>
+								<Folder Name="Lamp" ID="{9F76073D-5638-42A1-9978-7847C8A97F0B}" ShortID="370111174">
+									<ChildrenList>
+										<Event Name="Lamp_Land" ID="{D7144357-A3D2-4F23-A993-880FE15C491E}"/>
+										<Event Name="Pickup_Lamp" ID="{FFDBD2D6-76D1-4893-8CE6-7B778A2AAA09}"/>
+										<Event Name="Lamp_Flicker_AMB" ID="{A7DA9290-A074-46C2-9635-53BB24522D9F}"/>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="Painting" ID="{0A3DACA9-BB31-4213-86C3-7D886A58E8A7}" ShortID="76157081">
+									<ChildrenList>
+										<Event Name="Painting_Land" ID="{2A2C99CD-C61F-4499-B52F-38A68131B2E2}"/>
+										<Event Name="Pickup_Painting" ID="{34D7FD95-72E2-4BF6-908D-9EDBB9DBFDB2}"/>
+										<Event Name="Acquire_Painting" ID="{2B15A8CE-B1FC-4430-8F8E-D52F8FE8269A}"/>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Ambient" ID="{78DD8119-C635-4FA7-B0B8-D9D3BDFF14BF}" ShortID="856835700">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="15"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Event Name="Maze_Ambient" ID="{D9FB38E3-1132-4709-9E48-6891012B6BE6}"/>
+						<Event Name="HubRoom_Ambient" ID="{4A1A77BE-370A-48CD-927B-097D87D321FF}"/>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
