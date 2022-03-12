@@ -9,7 +9,6 @@ public class Candle : MonoBehaviour
     [SerializeField] Rigidbody2D rbPlayer;
     BoxCollider2D box;
     public float throwSpeed = 5f;
-    // public Vector2 playerInput;
     public bool thrown = false;
     private Vector2 playerInput = new Vector2(0f, 0f);
     private Vector2 lastDir = new Vector2(1f, 0f);
@@ -22,6 +21,7 @@ public class Candle : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
         Physics2D.IgnoreCollision(rbPlayer.gameObject.GetComponent<CapsuleCollider2D>(), box);
+        Physics2D.IgnoreCollision(rbPlayer.gameObject.GetComponent<BoxCollider2D>(), box);
     }
     void OnMove(InputValue value)
     {
