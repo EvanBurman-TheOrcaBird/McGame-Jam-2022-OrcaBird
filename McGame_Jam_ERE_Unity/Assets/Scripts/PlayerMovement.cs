@@ -8,11 +8,11 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f;
     private Vector2 step;
 
-    public float throwSpeed = 5f;
-
     public bool movingObj;
 
-    public float jumpHeight = 8f;
+    public float jumpHeight = 10f;
+    public float jumpHeightCandle = 6f;
+    public Candle candle;
     private Vector2 jumpSpeed;
     private bool jumping;
     private BoxCollider2D footCollider;
@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         footCollider = GetComponent<BoxCollider2D>();
-        jumpSpeed = new Vector2(0f, jumpHeight);
+        
 
     }
 
@@ -44,6 +44,17 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (candle.thrown)
+        {
+            transform.GetChild(0).gameObject.SetActive(true);
+            jumpSpeed = new Vector2(0f, jumpHeight);
+
+        }
+        else {
+            transform.GetChild(0).gameObject.SetActive(false);
+            jumpSpeed = new Vector2(0f, jumpHeightCandle);
+        }
+        if(step.x != 0) transform.localScale = new Vector2(Mathf.Sign(step.x), 1f);
         transform.position = (rb.position + step * speed * Time.fixedDeltaTime);
         if (jumping)
         {

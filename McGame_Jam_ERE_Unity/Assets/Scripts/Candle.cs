@@ -13,6 +13,7 @@ public class Candle : MonoBehaviour
     public bool thrown = false;
     private Vector2 playerInput = new Vector2(0f, 0f);
     private Vector2 lastDir = new Vector2(1f, 0f);
+    public Transform holdPoint;
 
 
 
@@ -34,7 +35,6 @@ public class Candle : MonoBehaviour
     void OnThrow()
     {
         if (thrown) return;
-        //Vector2 throwDir = OnMove.value;
         thrown = true;
         Vector2 throwVector;
         if (playerInput != new Vector2(0f, 0f))
@@ -43,7 +43,7 @@ public class Candle : MonoBehaviour
         }
         else
         {
-            throwVector = lastDir * throwSpeed;
+            throwVector = new Vector2(rbPlayer.transform.localScale.x, 0f);
         }
 
         rb.velocity = new Vector2(throwVector.x + rbPlayer.velocity.x, throwVector.y);
@@ -55,7 +55,7 @@ public class Candle : MonoBehaviour
         if (!thrown)
         {
             box.enabled = false;
-            rb.transform.localPosition = new Vector2(rbPlayer.transform.localPosition.x + 0.5f, rbPlayer.transform.localPosition.y);
+            rb.transform.localPosition = holdPoint.position;
         }
         else
         {
