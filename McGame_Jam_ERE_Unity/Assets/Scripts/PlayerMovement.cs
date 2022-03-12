@@ -49,6 +49,14 @@ public class PlayerMovement : MonoBehaviour
         speed = defaultSpeed;
     }
 
+    void OnTriggerEnter(Collider c)
+    {
+        if (false)
+        {
+            Debug.Log("land");
+        }
+    }
+
     void FixedUpdate()
     {
         if (candle.thrown)

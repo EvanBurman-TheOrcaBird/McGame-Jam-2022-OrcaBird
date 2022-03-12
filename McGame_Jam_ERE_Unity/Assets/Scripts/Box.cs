@@ -10,8 +10,8 @@ public class Box : MonoBehaviour
     private Rigidbody2D rb;
     public Rigidbody2D rbPlayer;
 
-    private float boxWidth = 1f; // To be set depending on box size
-    private float boxHeight = 1f;
+    private float boxWidth;
+    private float boxHeight;
     public Candle candle;
     public bool moveable;
     bool beingMoved;
@@ -24,11 +24,12 @@ public class Box : MonoBehaviour
         rb.isKinematic = false;
         top = GetComponents<BoxCollider2D>()[1]; // Depends on order in inspector
         Physics2D.IgnoreCollision(rbPlayer.gameObject.GetComponent<BoxCollider2D>(), top);
-    }
+        boxWidth = transform.localScale.x;
+        boxHeight = transform.localScale.y;
+}
 
     void OnTriggerEnter2D(Collider2D c)
     {
-        Debug.Log(c.gameObject.name);
         if (c == rbPlayer.gameObject.GetComponent<PlayerMovement>().handCollider && candle.thrown)
         {
             moveable = true;
@@ -76,10 +77,10 @@ public class Box : MonoBehaviour
         {   
             if (rb.transform.localPosition.x > rbPlayer.transform.localPosition.x) 
             {
-                rb.transform.localPosition = new Vector2(rbPlayer.transform.localPosition.x + (0.6f + (boxWidth / 2)), rb.transform.localPosition.y);
+                rb.transform.localPosition = new Vector2(rbPlayer.transform.localPosition.x + (0.55f + (boxWidth / 2)), rb.transform.localPosition.y);
             } else
             {
-                rb.transform.localPosition = new Vector2(rbPlayer.transform.localPosition.x - (0.6f + (boxWidth / 2)), rb.transform.localPosition.y);
+                rb.transform.localPosition = new Vector2(rbPlayer.transform.localPosition.x - (0.55f + (boxWidth / 2)), rb.transform.localPosition.y);
             }
         } 
         else
