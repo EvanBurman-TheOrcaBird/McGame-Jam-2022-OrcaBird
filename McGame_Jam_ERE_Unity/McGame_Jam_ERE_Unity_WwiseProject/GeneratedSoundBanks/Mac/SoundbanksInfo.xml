@@ -16,12 +16,41 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="3135335757">
+		<SoundBank Id="3161908922" Language="SFX" Hash="157956927">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3157003241" Name="Test" ObjectPath="\Events\Default Work Unit\Test" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="119526606" Name="Acquire_Painting" ObjectPath="\Events\Default Work Unit\Game Elements\HeldItems\Painting\Acquire_Painting" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1258024580" Name="BigBox_Land" ObjectPath="\Events\Default Work Unit\Game Elements\Boxes\BigBox\BigBox_Land" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2261947276" Name="Box_Land" ObjectPath="\Events\Default Work Unit\Game Elements\Boxes\NormalBox\Box_Land" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2659619755" Name="Checkpoint_Flicker_AMB" ObjectPath="\Events\Default Work Unit\Game Elements\Checkpoints\Checkpoint_Flicker_AMB" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1615164350" Name="Checkpoint_Light" ObjectPath="\Events\Default Work Unit\Game Elements\Checkpoints\Checkpoint_Light" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="636491075" Name="Hazard_Electricity" ObjectPath="\Events\Default Work Unit\Game Elements\Hazards\Hazard_Electricity" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2909913294" Name="HubRoom_Ambient" ObjectPath="\Events\Default Work Unit\Ambient\HubRoom_Ambient" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="212838940" Name="Ladder_Start" ObjectPath="\Events\Default Work Unit\Player\Movement\Ladder\Ladder_Start" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2835330800" Name="Ladder_Stop" ObjectPath="\Events\Default Work Unit\Player\Movement\Ladder\Ladder_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3656110923" Name="Lamp_Flicker_AMB" ObjectPath="\Events\Default Work Unit\Game Elements\HeldItems\Lamp\Lamp_Flicker_AMB" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1072201837" Name="Lamp_Land" ObjectPath="\Events\Default Work Unit\Game Elements\HeldItems\Lamp\Lamp_Land" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3003579385" Name="Maze_Ambient" ObjectPath="\Events\Default Work Unit\Ambient\Maze_Ambient" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1775861812" Name="Menue_ButtonSelect" ObjectPath="\Events\Default Work Unit\UI\Menue_ButtonSelect" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="845776139" Name="Painting_Land" ObjectPath="\Events\Default Work Unit\Game Elements\HeldItems\Painting\Painting_Land" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="528278262" Name="Pause_Game" ObjectPath="\Events\Default Work Unit\UI\Pause_Game" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1466213590" Name="Pickup_Lamp" ObjectPath="\Events\Default Work Unit\Game Elements\HeldItems\Lamp\Pickup_Lamp" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3772385332" Name="Pickup_Painting" ObjectPath="\Events\Default Work Unit\Game Elements\HeldItems\Painting\Pickup_Painting" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="4276063004" Name="Player_FS" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_FS" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1305133589" Name="Player_Jump" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Jump" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3629196698" Name="Player_Land" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Land" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="4118259557" Name="Player_LandHard" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_LandHard" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3092168424" Name="Player_Throw_Lamp" ObjectPath="\Events\Default Work Unit\Player\Object Interactions\Player_Throw_Lamp" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1990709034" Name="Player_Throw_Painting" ObjectPath="\Events\Default Work Unit\Player\Object Interactions\Player_Throw_Painting" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="990219009" Name="PushBigBox_Start" ObjectPath="\Events\Default Work Unit\Game Elements\Boxes\BigBox\PushBigBox_Start" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1806862011" Name="PushBigBox_Stop" ObjectPath="\Events\Default Work Unit\Game Elements\Boxes\BigBox\PushBigBox_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2426835913" Name="PushBox_Start" ObjectPath="\Events\Default Work Unit\Game Elements\Boxes\NormalBox\PushBox_Start" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3997536611" Name="PushBox_Stop" ObjectPath="\Events\Default Work Unit\Game Elements\Boxes\NormalBox\PushBox_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="327960653" Name="Quit_Game" ObjectPath="\Events\Default Work Unit\UI\Quit_Game" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1114964412" Name="Start_Game" ObjectPath="\Events\Default Work Unit\UI\Start_Game" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="275249087" Name="Unpause_Game" ObjectPath="\Events\Default Work Unit\UI\Unpause_Game" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
 		</SoundBank>
 	</SoundBanks>
