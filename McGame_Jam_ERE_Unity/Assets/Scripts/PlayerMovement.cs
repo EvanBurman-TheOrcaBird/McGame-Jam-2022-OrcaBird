@@ -16,14 +16,14 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 jumpSpeed;
     private bool jumping;
     private BoxCollider2D footCollider;
-
+    private Animator Animator;
     private Rigidbody2D rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         footCollider = GetComponent<BoxCollider2D>();
-        
+        Animator = GetComponent<Animator>();
 
     }
 
@@ -54,12 +54,36 @@ public class PlayerMovement : MonoBehaviour
             transform.GetChild(0).gameObject.SetActive(false);
             jumpSpeed = new Vector2(0f, jumpHeightCandle);
         }
-        if(step.x != 0) transform.localScale = new Vector2(Mathf.Sign(step.x), 1f);
+        if (step.x != 0)
+        {
+            transform.localScale = new Vector2(Mathf.Sign(step.x), 1f);
+            Animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            Animator.SetBool("isRunning", false);
+        }
         transform.position = (rb.position + step * speed * Time.fixedDeltaTime);
         if (jumping)
         {
             rb.AddForce(jumpSpeed, ForceMode2D.Impulse);
             jumping = false;
+        }
+        if (!footCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { 
+            if (rb.velocity.y > 0)
+            {
+                Animator.SetBool("isRising", true);
+                
+            } 
+            else if (rb.velocity.y < 0)
+            {
+                Animator.SetBool("isFalling", true);
+            }
+        }
+        else
+        {
+            Animator.SetBool("isRising", false);
+            Animator.SetBool("isFalling", false);
         }
         Die();
         
