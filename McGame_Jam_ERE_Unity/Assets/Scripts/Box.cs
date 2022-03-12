@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Box : MonoBehaviour
 
@@ -11,8 +12,8 @@ public class Box : MonoBehaviour
 
     private float boxWidth = 1f; // To be set depending on box size
     private float boxHeight = 1f;
-    private float heightThreshold = 0.2f; 
-
+    private float heightThreshold = 0.2f;
+    public Candle candle;
     bool moveable;
     bool beingMoved;
 
@@ -41,8 +42,12 @@ public class Box : MonoBehaviour
         }
     }
 
-    void OnMoveBox()
+    void OnThrow()
     {
+        if (!candle.thrown)
+        {
+            return;
+        }
         if (beingMoved)
         {
             rb.isKinematic = true;

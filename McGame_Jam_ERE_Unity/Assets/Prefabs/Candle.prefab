@@ -189,7 +189,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 13b0b93b18865b24a9131e8ac4679e34, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &2828324763620382518
 BoxCollider2D:
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rbPlayer: {fileID: 0}
-  throwSpeed: 10
+  throwSpeed: 12
   thrown: 0
 --- !u!114 &2828324763620382513
 MonoBehaviour:

@@ -15,14 +15,16 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHeight = 8f;
     private Vector2 jumpSpeed;
     private bool jumping;
+    private BoxCollider2D footCollider;
 
     private Rigidbody2D rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        footCollider = GetComponent<BoxCollider2D>();
         jumpSpeed = new Vector2(0f, jumpHeight);
+
     }
 
     void OnMove(InputValue inputVal)
@@ -33,6 +35,9 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump()
     {
+        if (!footCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))){
+            return;
+        }
         jumping = true;
         movingObj = false;
     }
@@ -45,6 +50,17 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(jumpSpeed, ForceMode2D.Impulse);
             jumping = false;
         }
+        Die();
         
+    }
+
+
+    void Die()
+    {
+        if (footCollider.IsTouchingLayers(LayerMask.GetMask("Hazards")))
+        {
+            rb.transform.localPosition = new Vector2(0f, 0f);
+            Debug.Log("death");
+        }
     }
 }
