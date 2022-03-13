@@ -13,9 +13,6 @@ public class PlayerMovement : MonoBehaviour
 
     public bool movingBox;
 
-    public bool canClimb = false;
-    public float ladderX;
-
     public float jumpHeight = 10f;
     public float jumpHeightCandle = 6f;
     public Candle candle;
@@ -42,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
     void OnMove(InputValue inputVal)
     {
         step = inputVal.Get<Vector2>();
-        climb = new Vector2(0, step.y);
+        climb = inputVal.Get<Vector2>();
         step = new Vector2(step.x, 0);
     }
 
@@ -79,9 +76,15 @@ public class PlayerMovement : MonoBehaviour
         }
         if (footCollider.IsTouchingLayers(LayerMask.GetMask("Ladder")))
         {
+            transform.position = (rb.position + climb * speed * Time.fixedDeltaTime);
+            Animator.SetBool("isRunning", false);
+            Animator.SetBool("isRising", false);
+            Animator.SetBool("isFalling", false);
         }
-        // rb.position = new Vector2(ladderX, rb.position.y);
-        transform.position = (rb.position + step * speed * Time.fixedDeltaTime);
+        else
+        {
+            transform.position = (rb.position + step * speed * Time.fixedDeltaTime);
+        }
         if (jumping)
         {
             rb.AddForce(jumpSpeed, ForceMode2D.Impulse);

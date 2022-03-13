@@ -6,28 +6,22 @@ public class Ladder : MonoBehaviour
 {
 
     public Rigidbody2D rbPlayer;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     void OnTriggerEnter2D(Collider2D c)
     {
-        if (c == rbPlayer.gameObject.GetComponent<PlayerMovement>())
+        if (c == rbPlayer.gameObject.GetComponent<BoxCollider2D>())
         {
-            rbPlayer.GetComponent<PlayerMovement>().canClimb = true;
-            rbPlayer.GetComponent<PlayerMovement>().ladderX = transform.position.x;
+            rbPlayer.gravityScale = 0;
+            rbPlayer.velocity = new Vector2(0f, 0f);
         }
     }
 
     void OnTriggerExit2D(Collider2D c)
     {
-        if (c == rbPlayer.gameObject.GetComponent<PlayerMovement>())
+        if (c == rbPlayer.gameObject.GetComponent<BoxCollider2D>())
         {
-            rbPlayer.GetComponent<PlayerMovement>().canClimb = false;
+            rbPlayer.gravityScale = 1;
         }
     }
-
+    
 }
