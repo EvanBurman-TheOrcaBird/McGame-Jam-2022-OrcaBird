@@ -29,8 +29,8 @@ public class PlayerMovement : MonoBehaviour
         footCollider = GetComponent<BoxCollider2D>();
         Animator = GetComponent<Animator>();
         rb.transform.localPosition = spawn.position;
-        handCollider = GetComponents<CapsuleCollider2D>()[1]; // relies on order in inspector
-        offset = handCollider.offset.x;
+        //handCollider = GetComponents<CapsuleCollider2D>()[1]; // relies on order in inspector
+        //offset = handCollider.offset.x;
         speed = defaultSpeed;
 
 
