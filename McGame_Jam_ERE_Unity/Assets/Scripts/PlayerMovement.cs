@@ -29,11 +29,9 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         footCollider = GetComponent<BoxCollider2D>();
         Animator = GetComponent<Animator>();
-        rb.transform.localPosition = spawn.position;
         handCollider = GetComponents<CapsuleCollider2D>()[1]; // relies on order in inspector
         speed = defaultSpeed;
-
-
+        rb.transform.localPosition = spawn.position;
     }
 
     void OnMove(InputValue inputVal)
@@ -51,6 +49,13 @@ public class PlayerMovement : MonoBehaviour
         jumping = true;
         movingBox = false;
         speed = defaultSpeed;
+    }
+
+    void OnRestart() // In case of softlocking
+    {
+        Debug.Log("trying to die");
+        rb.transform.localPosition = spawn.position;
+        candle.thrown = false;
     }
 
     void FixedUpdate()
