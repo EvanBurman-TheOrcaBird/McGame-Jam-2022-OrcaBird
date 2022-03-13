@@ -11,12 +11,15 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="1424617210">
+		<SoundBank Id="1355168291" Language="SFX" Hash="1357138316">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+			<IncludedAuxBusses>
+				<AuxBus Id="206373095" Name="Room_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX_Bus\Room_Reverb"/>
+			</IncludedAuxBusses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="157956927">
+		<SoundBank Id="3161908922" Language="SFX" Hash="4083940934">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -38,15 +41,147 @@
 				<Event Id="528278262" Name="Pause_Game" ObjectPath="\Events\Default Work Unit\UI\Pause_Game" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1466213590" Name="Pickup_Lamp" ObjectPath="\Events\Default Work Unit\Game Elements\HeldItems\Lamp\Pickup_Lamp" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="3772385332" Name="Pickup_Painting" ObjectPath="\Events\Default Work Unit\Game Elements\HeldItems\Painting\Pickup_Painting" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="4276063004" Name="Player_FS" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_FS" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1305133589" Name="Player_Jump" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Jump" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="3629196698" Name="Player_Land" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Land" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="4118259557" Name="Player_LandHard" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_LandHard" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="3092168424" Name="Player_Throw_Lamp" ObjectPath="\Events\Default Work Unit\Player\Object Interactions\Player_Throw_Lamp" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="4276063004" Name="Player_FS" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_FS" DurationType="OneShot" DurationMin="0.500027" DurationMax="0.867940">
+					<IncludedMemoryFiles>
+						<File Id="99982787" Language="SFX">
+							<ShortName>Player_Footstep-003.wav</ShortName>
+							<Path>SFX\Player_Footstep-003_46885AC6.wem</Path>
+						</File>
+						<File Id="131501337" Language="SFX">
+							<ShortName>Player_Footstep-004.wav</ShortName>
+							<Path>SFX\Player_Footstep-004_999646B8.wem</Path>
+						</File>
+						<File Id="378955397" Language="SFX">
+							<ShortName>Player_Footstep-001.wav</ShortName>
+							<Path>SFX\Player_Footstep-001_119B5074.wem</Path>
+						</File>
+						<File Id="869781254" Language="SFX">
+							<ShortName>Player_Footstep-002.wav</ShortName>
+							<Path>SFX\Player_Footstep-002_EF6EE304.wem</Path>
+						</File>
+						<File Id="905551301" Language="SFX">
+							<ShortName>Player_Footstep-005.wav</ShortName>
+							<Path>SFX\Player_Footstep-005_BEB71834.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="206373095" Name="Room_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX_Bus\Room_Reverb"/>
+					</AuxBusSends>
+				</Event>
+				<Event Id="1305133589" Name="Player_Jump" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Jump" DurationType="OneShot" DurationMin="0.437873" DurationMax="0.677715">
+					<IncludedMemoryFiles>
+						<File Id="708851613" Language="SFX">
+							<ShortName>Amelie_Breathing_Lift4.wav</ShortName>
+							<Path>SFX\Amelie_Breathing_Lift4_77385643.wem</Path>
+						</File>
+						<File Id="721995506" Language="SFX">
+							<ShortName>Amelie_Breathing_Lift3.wav</ShortName>
+							<Path>SFX\Amelie_Breathing_Lift3_AE3A0277.wem</Path>
+						</File>
+						<File Id="788249717" Language="SFX">
+							<ShortName>Amelie_Breathing_Lift2.wav</ShortName>
+							<Path>SFX\Amelie_Breathing_Lift2_30331E5E.wem</Path>
+						</File>
+						<File Id="980597302" Language="SFX">
+							<ShortName>Amelie_Breathing_Lift1.wav</ShortName>
+							<Path>SFX\Amelie_Breathing_Lift1_1AA5B079.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="206373095" Name="Room_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX_Bus\Room_Reverb"/>
+					</AuxBusSends>
+				</Event>
+				<Event Id="3629196698" Name="Player_Land" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_Land" DurationType="OneShot" DurationMin="0.365297" DurationMax="0.537407">
+					<IncludedMemoryFiles>
+						<File Id="198359076" Language="SFX">
+							<ShortName>Amelie_Breathing_Lift3.wav</ShortName>
+							<Path>SFX\Amelie_Breathing_Lift3_DC657B87.wem</Path>
+						</File>
+						<File Id="219985749" Language="SFX">
+							<ShortName>Amelie_Breathing_Lift2.wav</ShortName>
+							<Path>SFX\Amelie_Breathing_Lift2_A6452373.wem</Path>
+						</File>
+						<File Id="595327766" Language="SFX">
+							<ShortName>Amelie_Breathing_Lift1.wav</ShortName>
+							<Path>SFX\Amelie_Breathing_Lift1_12BCD40A.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="206373095" Name="Room_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX_Bus\Room_Reverb"/>
+					</AuxBusSends>
+				</Event>
+				<Event Id="4118259557" Name="Player_LandHard" ObjectPath="\Events\Default Work Unit\Player\Movement\Player_LandHard" DurationType="OneShot" DurationMin="1.887748" DurationMax="2.279501">
+					<IncludedMemoryFiles>
+						<File Id="297462361" Language="SFX">
+							<ShortName>Amelie_Breathing_Land2.wav</ShortName>
+							<Path>SFX\Amelie_Breathing_Land2_10C4C929.wem</Path>
+						</File>
+						<File Id="463382221" Language="SFX">
+							<ShortName>Amelie_Breathing_Land3.wav</ShortName>
+							<Path>SFX\Amelie_Breathing_Land3_10C4C929.wem</Path>
+						</File>
+						<File Id="485303721" Language="SFX">
+							<ShortName>Amelie_Breathing_Land1.wav</ShortName>
+							<Path>SFX\Amelie_Breathing_Land1_10C4C929.wem</Path>
+						</File>
+						<File Id="728721322" Language="SFX">
+							<ShortName>Amelie_Breathing_Land4.wav</ShortName>
+							<Path>SFX\Amelie_Breathing_Land4_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="206373095" Name="Room_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX_Bus\Room_Reverb"/>
+					</AuxBusSends>
+				</Event>
+				<Event Id="3092168424" Name="Player_Throw_Lamp" ObjectPath="\Events\Default Work Unit\Player\Object Interactions\Player_Throw_Lamp" DurationType="OneShot" DurationMin="0.076941" DurationMax="0.140105">
+					<IncludedMemoryFiles>
+						<File Id="145863485" Language="SFX">
+							<ShortName>ninja_star_spin_03.wav</ShortName>
+							<Path>SFX\ninja_star_spin_03_FD89A865.wem</Path>
+						</File>
+						<File Id="221026420" Language="SFX">
+							<ShortName>ninja_star_spin_03.wav</ShortName>
+							<Path>SFX\ninja_star_spin_03_06430976.wem</Path>
+						</File>
+						<File Id="434709609" Language="SFX">
+							<ShortName>ninja_star_spin_03.wav</ShortName>
+							<Path>SFX\ninja_star_spin_03_39666AE6.wem</Path>
+						</File>
+						<File Id="744873928" Language="SFX">
+							<ShortName>ninja_star_spin_03.wav</ShortName>
+							<Path>SFX\ninja_star_spin_03_AAD25C94.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="206373095" Name="Room_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\SFX_Bus\Room_Reverb"/>
+					</AuxBusSends>
+				</Event>
 				<Event Id="1990709034" Name="Player_Throw_Painting" ObjectPath="\Events\Default Work Unit\Player\Object Interactions\Player_Throw_Painting" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="990219009" Name="PushBigBox_Start" ObjectPath="\Events\Default Work Unit\Game Elements\Boxes\BigBox\PushBigBox_Start" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="990219009" Name="PushBigBox_Start" ObjectPath="\Events\Default Work Unit\Game Elements\Boxes\BigBox\PushBigBox_Start" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="152350098" Language="SFX">
+							<ShortName>47038-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_01.wav</ShortName>
+							<Path>SFX\47038-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_01_1B06F5A2.wem</Path>
+						</File>
+						<File Id="465975714" Language="SFX">
+							<ShortName>49614-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_FAST_GRIND_01.wav</ShortName>
+							<Path>SFX\49614-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_FAST_GRIND_01_291F2DCB.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1806862011" Name="PushBigBox_Stop" ObjectPath="\Events\Default Work Unit\Game Elements\Boxes\BigBox\PushBigBox_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2426835913" Name="PushBox_Start" ObjectPath="\Events\Default Work Unit\Game Elements\Boxes\NormalBox\PushBox_Start" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2426835913" Name="PushBox_Start" ObjectPath="\Events\Default Work Unit\Game Elements\Boxes\NormalBox\PushBox_Start" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="152350098" Language="SFX">
+							<ShortName>47038-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_01.wav</ShortName>
+							<Path>SFX\47038-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_01_1B06F5A2.wem</Path>
+						</File>
+						<File Id="915846233" Language="SFX">
+							<ShortName>48958-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_FAST_01.wav</ShortName>
+							<Path>SFX\48958-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_FAST_01_54A4807A.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="3997536611" Name="PushBox_Stop" ObjectPath="\Events\Default Work Unit\Game Elements\Boxes\NormalBox\PushBox_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="327960653" Name="Quit_Game" ObjectPath="\Events\Default Work Unit\UI\Quit_Game" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1114964412" Name="Start_Game" ObjectPath="\Events\Default Work Unit\UI\Start_Game" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
