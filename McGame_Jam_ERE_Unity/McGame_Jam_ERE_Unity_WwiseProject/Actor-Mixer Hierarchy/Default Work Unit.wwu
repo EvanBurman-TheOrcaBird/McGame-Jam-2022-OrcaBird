@@ -31,6 +31,197 @@
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<ActorMixer Name="Boxes" ID="{C9F1C065-FF12-4D98-9322-6FD89C4D71A9}" ShortID="771018389">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="BoxDrag" ID="{529A8BC6-DFA6-4554-AA02-A38A35C87E75}" ShortID="849907750">
+									<PropertyList>
+										<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="2"/>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="BoxDrag_Loop" ID="{3CC476F7-4A1F-4CBB-ACEC-9B9FEE9CAC24}" ShortID="153683026">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="47038-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_01" ID="{EF43C1F4-D8AC-4D33-985F-ADE70E636B39}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0742571820935153"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.196781532547816"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>47038-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="152350098"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="47038-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_01" ID="{EF43C1F4-D8AC-4D33-985F-ADE70E636B39}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+									<Playlist>
+										<ItemRef Name="BoxDrag_Loop" ID="{3CC476F7-4A1F-4CBB-ACEC-9B9FEE9CAC24}"/>
+									</Playlist>
+								</RandomSequenceContainer>
+								<Sound Name="49614-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_FAST_GRIND_01" ID="{B4693B00-06BE-45C3-A804-BF96EFE7A527}" ShortID="1030701355">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-7</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="49614-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_FAST_GRIND_01" ID="{413482C6-80D0-4E37-84B9-BCCFA884AF19}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.197372881355932"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.323262711864407"/>
+												<Property Name="FadeOutShape" Type="int16" Value="0"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.00288135593220335"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.145"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>49614-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_FAST_GRIND_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="465975714"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="49614-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_FAST_GRIND_01" ID="{413482C6-80D0-4E37-84B9-BCCFA884AF19}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="48958-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_FAST_01" ID="{7CED0F2D-933A-46F6-8457-D6DA6FF44372}" ShortID="186555945">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-7</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="48958-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_FAST_01" ID="{64AEBEC0-0793-418D-B5CF-D1A3AE79C667}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.250294232099619"/>
+												<Property Name="FadeOutShape" Type="int16" Value="0"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.20849134286483"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>48958-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_FAST_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="915846233"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="48958-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_FAST_01" ID="{64AEBEC0-0793-418D-B5CF-D1A3AE79C667}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<RandomSequenceContainer Name="BigBox_Drag" ID="{B25C0FC7-9682-4B29-B4F4-9D039B0CFE99}" ShortID="7429172">
+									<PropertyList>
+										<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="2"/>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="BoxDrag_Loop" ID="{01AB7518-0998-4479-A7B8-7D818BD68BF7}" ShortID="523950864">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="47038-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_01" ID="{B928CAA6-C891-44AC-80E8-5D69A7B3BB4E}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0742571820935153"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.196781532547816"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>47038-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="152350098"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="47038-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_01" ID="{B928CAA6-C891-44AC-80E8-5D69A7B3BB4E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+									<Playlist>
+										<ItemRef Name="BoxDrag_Loop" ID="{01AB7518-0998-4479-A7B8-7D818BD68BF7}"/>
+									</Playlist>
+								</RandomSequenceContainer>
+							</ChildrenList>
+							<ObjectLists/>
+						</ActorMixer>
+					</ChildrenList>
 					<ObjectLists/>
 				</ActorMixer>
 				<ActorMixer Name="Player" ID="{0374CB1A-4503-4499-8660-547A168DC5FE}" ShortID="961704935">
@@ -738,6 +929,11 @@
 														<Value>-10</Value>
 													</ValueList>
 												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>4</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -757,7 +953,7 @@
 														<Property Name="FadeOutDuration" Type="Real64" Value="0.288558314892222"/>
 														<Property Name="FadeOutShape" Type="int16" Value="0"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="0.415629866404393"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.53740676993689"/>
 														<Property Name="TrimEnd" Type="Real64" Value="1.07481353987378"/>
 													</PropertyList>
 													<Language>SFX</Language>
@@ -770,6 +966,206 @@
 											<ObjectLists/>
 											<ActiveSourceList>
 												<ActiveSource Name="Amelie_Breathing_Lift1" ID="{03715DDB-ABA4-4461-BF17-7E275466C7E9}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Player_Throw_Lamp" ID="{433E8FE2-C8D6-4CDE-86BD-6CB3F39056A9}" ShortID="327127370">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-750</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{224931A3-0288-420E-9412-3F5D54F3F3A2}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="500"/>
+															<Property Name="Min" Type="Real64" Value="-100"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="UserAuxSendVolume0" Type="Real64">
+											<ValueList>
+												<Value>-10</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-13</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX_Bus" ID="{C0855ED6-4447-4FCC-BDFA-57288ABE5C54}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+										</Reference>
+										<Reference Name="UserAuxSend0">
+											<ObjectRef Name="Room_Reverb" ID="{F1121EC8-7EDE-4595-AEB1-F479E82A70CF}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="ninja_star_spin_03" ID="{A63FC933-54B0-429F-8D55-9F0B1297EB58}" ShortID="33661123">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="ninja_star_spin_03" ID="{ECE05501-4E81-4A9D-A826-90F0B03084D9}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0729796474031728"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0493581784766191"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.190248587570621"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.275996596555715"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>ninja_star_spin_03.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="744873928"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="ninja_star_spin_03" ID="{ECE05501-4E81-4A9D-A826-90F0B03084D9}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="ninja_star_spin_01" ID="{18B8E8F1-39FD-45FF-8CAA-073A5F6201D9}" ShortID="920640407">
+											<PropertyList>
+												<Property Name="UserAuxSendVolume0" Type="Real64">
+													<ValueList>
+														<Value>-10</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX_Bus" ID="{C0855ED6-4447-4FCC-BDFA-57288ABE5C54}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="Room_Reverb" ID="{F1121EC8-7EDE-4595-AEB1-F479E82A70CF}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="ninja_star_spin_03" ID="{551DC2B5-AE3D-47BF-A96E-3E49FD3306F4}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0353129807365061"/>
+														<Property Name="FadeInShape" Type="int16" Value="9"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0385050711319864"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.0665954666122123"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>ninja_star_spin_03.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="221026420"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="ninja_star_spin_03" ID="{551DC2B5-AE3D-47BF-A96E-3E49FD3306F4}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="ninja_star_spin_02" ID="{C2072E84-C962-4F7D-9294-540A67319F85}" ShortID="118989804">
+											<PropertyList>
+												<Property Name="UserAuxSendVolume0" Type="Real64">
+													<ValueList>
+														<Value>-10</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX_Bus" ID="{C0855ED6-4447-4FCC-BDFA-57288ABE5C54}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="Room_Reverb" ID="{F1121EC8-7EDE-4595-AEB1-F479E82A70CF}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="ninja_star_spin_03" ID="{33A374C6-1CE3-442E-9075-89D0089F9B8A}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0480813423184271"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0493581784766191"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.0606497175141243"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.140651963787354"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>ninja_star_spin_03.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="145863485"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="ninja_star_spin_03" ID="{33A374C6-1CE3-442E-9075-89D0089F9B8A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="ninja_star_spin_04" ID="{61729A0B-195D-456B-9077-5E95170F4615}" ShortID="569745189">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-400</Value>
+													</ValueList>
+												</Property>
+												<Property Name="UserAuxSendVolume0" Type="Real64">
+													<ValueList>
+														<Value>-10</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX_Bus" ID="{C0855ED6-4447-4FCC-BDFA-57288ABE5C54}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="Room_Reverb" ID="{F1121EC8-7EDE-4595-AEB1-F479E82A70CF}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="ninja_star_spin_03" ID="{C2CDB018-2767-4755-A1D6-97A872435BE8}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0353129807365061"/>
+														<Property Name="FadeInShape" Type="int16" Value="9"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0385050711319864"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.331338983050847"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.397296031583964"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>ninja_star_spin_03.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="434709609"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="ninja_star_spin_03" ID="{C2CDB018-2767-4755-A1D6-97A872435BE8}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
