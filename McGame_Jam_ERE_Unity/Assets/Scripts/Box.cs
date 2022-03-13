@@ -24,9 +24,19 @@ public class Box : MonoBehaviour
         rb.isKinematic = false;
         top = GetComponents<BoxCollider2D>()[1]; // Depends on order in inspector
         Physics2D.IgnoreCollision(rbPlayer.gameObject.GetComponent<BoxCollider2D>(), top);
-        boxWidth = transform.localScale.x;
-        boxHeight = transform.localScale.y;
-}
+        BoxCollider2D col = GetComponents<BoxCollider2D>()[0];
+        if (transform.rotation.z == 0)
+        {
+            boxWidth = GetComponents<BoxCollider2D>()[0].size.x;
+            boxHeight = GetComponents<BoxCollider2D>()[0].size.y;
+        }
+        else // For rotated sprite objects
+        {
+            boxWidth = GetComponents<BoxCollider2D>()[0].size.y;
+            boxHeight = GetComponents<BoxCollider2D>()[0].size.x;
+        }
+        
+    }
 
     void OnTriggerEnter2D(Collider2D c)
     {
