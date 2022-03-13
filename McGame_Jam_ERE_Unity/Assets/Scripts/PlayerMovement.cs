@@ -28,8 +28,9 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         footCollider = GetComponent<BoxCollider2D>();
         Animator = GetComponent<Animator>();
-        //rb.transform.localPosition = spawn.position;
-        handCollider = GetComponents<CapsuleCollider2D>()[1]; // relies on order in inspector
+        rb.transform.localPosition = spawn.position;
+        //handCollider = GetComponents<CapsuleCollider2D>()[1]; // relies on order in inspector
+        //offset = handCollider.offset.x;
         speed = defaultSpeed;
 
 
@@ -49,14 +50,6 @@ public class PlayerMovement : MonoBehaviour
         jumping = true;
         movingBox = false;
         speed = defaultSpeed;
-    }
-
-    void OnTriggerEnter(Collider c)
-    {
-        if (false)
-        {
-            Debug.Log("land");
-        }
     }
 
     void FixedUpdate()
@@ -111,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (footCollider.IsTouchingLayers(LayerMask.GetMask("Hazards")))
         {
-            //rb.transform.localPosition = spawn.position;
+            rb.transform.localPosition = spawn.position;
             candle.thrown = false;
             Debug.Log("death");
             
