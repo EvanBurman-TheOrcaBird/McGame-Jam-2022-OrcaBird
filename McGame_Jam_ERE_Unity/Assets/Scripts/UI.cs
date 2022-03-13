@@ -4,14 +4,18 @@ using UnityEngine;
 
 public static class UI
 {
-    static int paintingCount = 0;
+    public static int paintingCount = 0;
 
 
 
     public static void getPainting()
     {
         paintingCount++;
-        Debug.Log(paintingCount);
+        if (paintingCount == 3)
+        {
+            GameObject.Find("ClaireText").GetComponent<TextMesh>().text = "You did it!";
+            GameObject.Find("ClaireText").GetComponent<Animator>().SetBool("hasText", true);
+        }
     }
 
 }

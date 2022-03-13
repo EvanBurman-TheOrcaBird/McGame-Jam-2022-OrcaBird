@@ -27,22 +27,22 @@ public class ClaireText : MonoBehaviour
         switch (promptNumber)
         {
             case 1:
-                txt.text = "I can jump with Space.";
+                txt.text = "Jump with Space.";
                 break;
             case 2:
-                txt.text = "I can throw my candle with J.";
+                txt.text = "Drop candle with J.\nThrow candle with J + A, W, and D.";
                 break;
             case 3:
-                txt.text = "I can move boxes with J\nif I don't have my candle.";
+                txt.text = "Move boxes with J\nif not holding candle.";
                 break;
             case 4:
-                txt.text = "I can go up and down ladders using W and S.";
+                txt.text = "Go up and down ladders with W and S.";
                 break;
             case 5:
-                txt.text = "Spikes will kill me and my candle.";
+                txt.text = "Spikes will kill me.";
                 break;
             case 6:
-                txt.text = "I should jump to get the painting!";
+                txt.text = "Respawn with P.";
                 break;
         }
 
