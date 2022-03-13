@@ -8,9 +8,13 @@ public class PlayerMovement : MonoBehaviour
     public float defaultSpeed = 5f;
     public float speed;
     private Vector2 step;
+    private Vector2 climb;
     public Transform spawn;
 
     public bool movingBox;
+
+    public bool canClimb = false;
+    public float ladderX;
 
     public float jumpHeight = 10f;
     public float jumpHeightCandle = 6f;
@@ -28,9 +32,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         footCollider = GetComponent<BoxCollider2D>();
         Animator = GetComponent<Animator>();
-        rb.transform.localPosition = spawn.position;
-        //handCollider = GetComponents<CapsuleCollider2D>()[1]; // relies on order in inspector
-        //offset = handCollider.offset.x;
+        //rb.transform.localPosition = spawn.position;
+        handCollider = GetComponents<CapsuleCollider2D>()[1]; // relies on order in inspector
         speed = defaultSpeed;
 
 
@@ -39,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     void OnMove(InputValue inputVal)
     {
         step = inputVal.Get<Vector2>();
+        climb = new Vector2(0, step.y);
         step = new Vector2(step.x, 0);
     }
 
@@ -73,6 +77,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Animator.SetBool("isRunning", false);
         }
+        if (footCollider.IsTouchingLayers(LayerMask.GetMask("Ladder")))
+        {
+        }
+        // rb.position = new Vector2(ladderX, rb.position.y);
         transform.position = (rb.position + step * speed * Time.fixedDeltaTime);
         if (jumping)
         {
@@ -104,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (footCollider.IsTouchingLayers(LayerMask.GetMask("Hazards")))
         {
-            rb.transform.localPosition = spawn.position;
+            //rb.transform.localPosition = spawn.position;
             candle.thrown = false;
             Debug.Log("death");
             
