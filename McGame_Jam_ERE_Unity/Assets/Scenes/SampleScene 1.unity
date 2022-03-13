@@ -2093,5 +2093,7 @@ PrefabInstance:
       propertyPath: candle
       value: 
       objectReference: {fileID: 2026216741}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 8f55438c6cf436c4390e64333bb2559c, type: 3}
