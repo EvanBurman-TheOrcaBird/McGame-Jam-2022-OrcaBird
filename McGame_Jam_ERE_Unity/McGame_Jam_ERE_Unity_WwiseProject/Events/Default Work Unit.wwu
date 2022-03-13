@@ -65,7 +65,17 @@
 						</Folder>
 						<Folder Name="Object Interactions" ID="{F7EC6FFE-9FB0-47EA-89DF-D2BD6C91BC9E}" ShortID="555757681">
 							<ChildrenList>
-								<Event Name="Player_Throw_Lamp" ID="{8D45DBC3-6666-4CB9-89E4-562762D351D0}"/>
+								<Event Name="Player_Throw_Lamp" ID="{8D45DBC3-6666-4CB9-89E4-562762D351D0}">
+									<ChildrenList>
+										<Action Name="" ID="{634AC069-FAF6-4937-A6AF-482AB4CF2E7F}" ShortID="178663178">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_Throw_Lamp" ID="{433E8FE2-C8D6-4CDE-86BD-6CB3F39056A9}" WorkUnitID="{43F2AAF9-C54B-4047-8EAA-705053B175C4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Event Name="Player_Throw_Painting" ID="{D3473BA9-882B-437E-8AAE-C41768F932B1}"/>
 							</ChildrenList>
 						</Folder>
@@ -106,15 +116,103 @@
 								<Folder Name="BigBox" ID="{976B1EB8-DE74-46C7-B0AF-E3F9DA3AAAFA}" ShortID="1025313429">
 									<ChildrenList>
 										<Event Name="BigBox_Land" ID="{DCE80DA5-767D-4081-86BF-0ED33FC4B874}"/>
-										<Event Name="PushBigBox_Start" ID="{AC28E7D2-88F6-4322-BFAE-3E09D21FB324}"/>
-										<Event Name="PushBigBox_Stop" ID="{BEA458A0-B46B-469E-87D1-37993AF05421}"/>
+										<Event Name="PushBigBox_Start" ID="{AC28E7D2-88F6-4322-BFAE-3E09D21FB324}">
+											<ChildrenList>
+												<Action Name="" ID="{2D265314-A5EA-44EA-9A49-9B06382D5650}" ShortID="887372535">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="BigBox_Drag" ID="{B25C0FC7-9682-4B29-B4F4-9D039B0CFE99}" WorkUnitID="{43F2AAF9-C54B-4047-8EAA-705053B175C4}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+												<Action Name="" ID="{3E2B0350-FACA-4D81-B27C-36B48A49EF36}" ShortID="499537315">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="49614-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_FAST_GRIND_01" ID="{B4693B00-06BE-45C3-A804-BF96EFE7A527}" WorkUnitID="{43F2AAF9-C54B-4047-8EAA-705053B175C4}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="PushBigBox_Stop" ID="{BEA458A0-B46B-469E-87D1-37993AF05421}">
+											<ChildrenList>
+												<Action Name="" ID="{EACC1C77-6161-46AB-BD42-E5E7A3ADDC3B}" ShortID="251192517">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="2"/>
+														<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="BigBox_Drag" ID="{B25C0FC7-9682-4B29-B4F4-9D039B0CFE99}" WorkUnitID="{43F2AAF9-C54B-4047-8EAA-705053B175C4}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+												<Action Name="" ID="{486DB1FE-8F12-46EB-8285-3F972CF41DB7}" ShortID="538301241">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="2"/>
+														<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="49614-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_FAST_GRIND_01" ID="{B4693B00-06BE-45C3-A804-BF96EFE7A527}" WorkUnitID="{43F2AAF9-C54B-4047-8EAA-705053B175C4}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="NormalBox" ID="{9567C64D-08A0-4BD6-BF08-95460093E1C4}" ShortID="667141093">
 									<ChildrenList>
 										<Event Name="Box_Land" ID="{90E9A933-2D8E-49B7-ADB9-C185924AD394}"/>
-										<Event Name="PushBox_Start" ID="{C6FE0702-99B7-4EEC-AAAA-9832A7505044}"/>
-										<Event Name="PushBox_Stop" ID="{CFD2EFB2-E746-472C-A1CD-3C51260403FB}"/>
+										<Event Name="PushBox_Start" ID="{C6FE0702-99B7-4EEC-AAAA-9832A7505044}">
+											<ChildrenList>
+												<Action Name="" ID="{769F2E85-678F-40B8-B3E2-B89AF0B69509}" ShortID="843231369">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="BoxDrag" ID="{529A8BC6-DFA6-4554-AA02-A38A35C87E75}" WorkUnitID="{43F2AAF9-C54B-4047-8EAA-705053B175C4}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+												<Action Name="" ID="{90A9849D-B5A0-4792-8CC3-B612573A8FDD}" ShortID="2443806">
+													<PropertyList>
+														<Property Name="Delay" Type="Real64" Value="0.2"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="48958-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_FAST_01" ID="{7CED0F2D-933A-46F6-8457-D6DA6FF44372}" WorkUnitID="{43F2AAF9-C54B-4047-8EAA-705053B175C4}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="PushBox_Stop" ID="{CFD2EFB2-E746-472C-A1CD-3C51260403FB}">
+											<ChildrenList>
+												<Action Name="" ID="{BC36715D-2C82-4017-B435-ABAABC923081}" ShortID="91062457">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="2"/>
+														<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="BoxDrag" ID="{529A8BC6-DFA6-4554-AA02-A38A35C87E75}" WorkUnitID="{43F2AAF9-C54B-4047-8EAA-705053B175C4}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+												<Action Name="" ID="{ACC74D03-3D9F-4D46-A771-F44A099F6FB3}" ShortID="444313836">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="2"/>
+														<Property Name="Delay" Type="Real64" Value="0.2"/>
+														<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="48958-FOLEY_WOOD_BOX_DRAG_ON_CEMENT_FAST_01" ID="{7CED0F2D-933A-46F6-8457-D6DA6FF44372}" WorkUnitID="{43F2AAF9-C54B-4047-8EAA-705053B175C4}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
 								</Folder>
 							</ChildrenList>
