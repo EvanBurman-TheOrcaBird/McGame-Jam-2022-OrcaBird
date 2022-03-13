@@ -44,7 +44,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Player_Jump" ID="{3439B042-77BA-4DD2-8DF1-B911000C74D7}"/>
+								<Event Name="Player_Jump" ID="{3439B042-77BA-4DD2-8DF1-B911000C74D7}">
+									<ChildrenList>
+										<Action Name="" ID="{A0186D8E-F412-4289-A142-ACDF04E38AA3}" ShortID="519628137">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_Jump_Breath" ID="{9A4AB439-19CE-4DCE-B66B-62BEDCA0D718}" WorkUnitID="{43F2AAF9-C54B-4047-8EAA-705053B175C4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Folder Name="Ladder" ID="{63215165-3A1F-4E37-82A8-12DF9DBCDA1B}" ShortID="413580176">
 									<ChildrenList>
 										<Event Name="Ladder_Start" ID="{D246B112-E183-4603-9293-2020A68E33E5}"/>
