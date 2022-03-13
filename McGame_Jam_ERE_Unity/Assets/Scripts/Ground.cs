@@ -11,7 +11,6 @@ public class Ground : MonoBehaviour
         if (c == rbPlayer.gameObject.GetComponent<PlayerMovement>().footCollider)
         {
             Debug.Log("land"); // This is where sound goes
-            AkSoundEngine.PostEvent("player_land", rbPlayer.gameObject);
         }
     }
 
