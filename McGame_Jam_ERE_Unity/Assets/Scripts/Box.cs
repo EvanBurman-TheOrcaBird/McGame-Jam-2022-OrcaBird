@@ -96,10 +96,10 @@ public class Box : MonoBehaviour
         {   
             if (rb.transform.localPosition.x > rbPlayer.transform.localPosition.x) 
             {
-                rb.transform.localPosition = new Vector2(rbPlayer.transform.localPosition.x + (0.55f + (boxWidth / 2)), rb.transform.localPosition.y);
+                rb.transform.localPosition = new Vector2(rbPlayer.transform.localPosition.x + (0.45f + (boxWidth / 2)), rb.transform.localPosition.y);
             } else
             {
-                rb.transform.localPosition = new Vector2(rbPlayer.transform.localPosition.x - (0.55f + (boxWidth / 2)), rb.transform.localPosition.y);
+                rb.transform.localPosition = new Vector2(rbPlayer.transform.localPosition.x - (0.45f + (boxWidth / 2)), rb.transform.localPosition.y);
             }
         } 
         else

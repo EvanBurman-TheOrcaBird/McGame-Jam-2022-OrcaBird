@@ -80,6 +80,15 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Restart"",
+                    ""type"": ""Button"",
+                    ""id"": ""508fd23c-c4e9-49fd-b68e-98ea0d0d7cb8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -366,6 +375,28 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""MoveBox"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""83bfca25-c1e7-4887-8bfe-5448ffef7097"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f6f20cb6-6e15-41f3-9fd8-23143cc2efbe"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Restart"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -959,6 +990,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         m_Player_Throw = m_Player.FindAction("Throw", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_MoveBox = m_Player.FindAction("MoveBox", throwIfNotFound: true);
+        m_Player_Restart = m_Player.FindAction("Restart", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1036,6 +1068,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Throw;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_MoveBox;
+    private readonly InputAction m_Player_Restart;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
@@ -1046,6 +1079,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         public InputAction @Throw => m_Wrapper.m_Player_Throw;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @MoveBox => m_Wrapper.m_Player_MoveBox;
+        public InputAction @Restart => m_Wrapper.m_Player_Restart;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1073,6 +1107,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @MoveBox.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveBox;
                 @MoveBox.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveBox;
                 @MoveBox.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveBox;
+                @Restart.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestart;
+                @Restart.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestart;
+                @Restart.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestart;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1095,6 +1132,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @MoveBox.started += instance.OnMoveBox;
                 @MoveBox.performed += instance.OnMoveBox;
                 @MoveBox.canceled += instance.OnMoveBox;
+                @Restart.started += instance.OnRestart;
+                @Restart.performed += instance.OnRestart;
+                @Restart.canceled += instance.OnRestart;
             }
         }
     }
@@ -1257,6 +1297,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         void OnThrow(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnMoveBox(InputAction.CallbackContext context);
+        void OnRestart(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
