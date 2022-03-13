@@ -46,7 +46,7 @@ public class Candle : MonoBehaviour
 
     void Update()
     {
-        if (!thrown)
+        if (!thrown && !rbPlayer.gameObject.GetComponent<PlayerMovement>().movingBox)
         {
             box.enabled = false;
             rb.transform.localPosition = holdPoint.position;
