@@ -35,6 +35,11 @@ public class Box : MonoBehaviour
             moveable = true;
             Debug.Log(moveable);
         }
+        if (c == rbPlayer.gameObject.GetComponent<PlayerMovement>().footCollider)
+        {
+            Debug.Log("foot"); // This is where sound goes
+            rb.isKinematic = true;
+        }
     }
 
     void OnTriggerExit2D(Collider2D c)
@@ -45,6 +50,10 @@ public class Box : MonoBehaviour
             beingMoved = false;
             rbPlayer.gameObject.GetComponent<PlayerMovement>().movingBox = false;
             rbPlayer.gameObject.GetComponent<PlayerMovement>().speed = rbPlayer.gameObject.GetComponent<PlayerMovement>().defaultSpeed;
+        }
+        if(c == rbPlayer.gameObject.GetComponent<PlayerMovement>().footCollider)
+        {
+            rb.isKinematic = false;
         }
     }
 

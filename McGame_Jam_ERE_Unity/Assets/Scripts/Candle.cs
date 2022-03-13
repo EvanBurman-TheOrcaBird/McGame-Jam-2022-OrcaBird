@@ -11,7 +11,6 @@ public class Candle : MonoBehaviour
     public float throwSpeed = 5f;
     public bool thrown = false;
     private Vector2 playerInput = new Vector2(0f, 0f);
-    private Vector2 lastDir = new Vector2(1f, 0f);
     public Transform holdPoint;
 
 
@@ -26,11 +25,6 @@ public class Candle : MonoBehaviour
     void OnMove(InputValue value)
     {
         playerInput = value.Get<Vector2>();
-        if (playerInput != new Vector2(0f, 0f))
-        {
-            lastDir = playerInput;
-        }
-
     }
     void OnThrow()
     {
@@ -64,7 +58,7 @@ public class Candle : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && box.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if (collision.CompareTag("Player") && (box.IsTouchingLayers(LayerMask.GetMask("Ground")) || (box.IsTouchingLayers(LayerMask.GetMask("Boxes")))))
         {
             thrown = false;
             Debug.Log("pickup");
