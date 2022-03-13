@@ -13,9 +13,6 @@ public class PlayerMovement : MonoBehaviour
 
     public bool movingBox;
 
-    public bool canClimb = false;
-    public float ladderX;
-
     public float jumpHeight = 10f;
     public float jumpHeightCandle = 6f;
     public Candle candle;
@@ -79,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (footCollider.IsTouchingLayers(LayerMask.GetMask("Ladder")))
         {
+            transform.position = (rb.position + climb * speed * Time.fixedDeltaTime);
         }
         // rb.position = new Vector2(ladderX, rb.position.y);
         transform.position = (rb.position + step * speed * Time.fixedDeltaTime);
