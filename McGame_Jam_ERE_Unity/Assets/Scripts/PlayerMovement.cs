@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public Candle candle;
     private Vector2 jumpSpeed;
     private bool jumping;
-    private BoxCollider2D footCollider;
+    public BoxCollider2D footCollider;
     public CapsuleCollider2D handCollider;
     private float offset;
     private Animator Animator;

@@ -363,11 +363,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aba625e537d4fe478a857fc95db3917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultSpeed: 5
   speed: 6
-  movingObj: 0
+  spawn: {fileID: 0}
+  movingBox: 0
   jumpHeight: 10
   jumpHeightCandle: 6
   candle: {fileID: 0}
+  footCollider: {fileID: 0}
+  handCollider: {fileID: 0}
 --- !u!61 &359397930
 BoxCollider2D:
   m_ObjectHideFlags: 0
