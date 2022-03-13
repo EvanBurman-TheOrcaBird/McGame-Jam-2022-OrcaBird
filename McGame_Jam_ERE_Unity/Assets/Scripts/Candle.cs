@@ -21,6 +21,8 @@ public class Candle : MonoBehaviour
         box = GetComponent<BoxCollider2D>();
         Physics2D.IgnoreCollision(rbPlayer.gameObject.GetComponent<CapsuleCollider2D>(), box);
         Physics2D.IgnoreCollision(rbPlayer.gameObject.GetComponent<BoxCollider2D>(), box);
+        Physics2D.IgnoreCollision(GetComponents<CapsuleCollider2D>()[1], box);
+        Physics2D.IgnoreCollision(GetComponents<CapsuleCollider2D>()[1], GetComponent<CapsuleCollider2D>());
     }
     void OnMove(InputValue value)
     {
@@ -31,17 +33,18 @@ public class Candle : MonoBehaviour
         if (thrown) return;
         thrown = true;
         Vector2 throwVector;
-        if (playerInput != new Vector2(0f, 0f))
+        
+        if (playerInput.magnitude > Mathf.Epsilon)
         {
             throwVector = throwSpeed * playerInput;
+            Debug.Log(playerInput);
         }
-        else
-        {
+        else{
             throwVector = new Vector2(rbPlayer.transform.localScale.x, 0f);
         }
 
         rb.velocity = new Vector2(throwVector.x + rbPlayer.velocity.x, throwVector.y);
-        Debug.Log("throw");
+        
     }
 
     void Update()
@@ -58,6 +61,7 @@ public class Candle : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.isTrigger) return;
         if (collision.CompareTag("Player") && (box.IsTouchingLayers(LayerMask.GetMask("Ground")) || (box.IsTouchingLayers(LayerMask.GetMask("Boxes")))))
         {
             thrown = false;
