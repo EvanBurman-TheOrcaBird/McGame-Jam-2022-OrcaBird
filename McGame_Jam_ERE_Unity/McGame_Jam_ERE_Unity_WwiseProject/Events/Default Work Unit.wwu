@@ -11,9 +11,39 @@
 					<ChildrenList>
 						<Folder Name="Movement" ID="{E0ED4158-E4DE-4B39-8E30-CC95C232AD97}" ShortID="250425851">
 							<ChildrenList>
-								<Event Name="Player_LandHard" ID="{58F690DA-A3B0-4707-B442-F90CD1E76EFB}"/>
-								<Event Name="Player_FS" ID="{5F16335A-8905-47A9-AA11-90BB6AA7E23B}"/>
-								<Event Name="Player_Land" ID="{38E85E96-ED2B-49A3-9E6D-9EB06425A253}"/>
+								<Event Name="Player_LandHard" ID="{58F690DA-A3B0-4707-B442-F90CD1E76EFB}">
+									<ChildrenList>
+										<Action Name="" ID="{7EA85513-BBE5-482B-857B-84DF82D93653}" ShortID="529322973">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_LandHard_Breath" ID="{8EDFE0B2-A0B0-47A8-866A-6234223F259E}" WorkUnitID="{43F2AAF9-C54B-4047-8EAA-705053B175C4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Player_FS" ID="{5F16335A-8905-47A9-AA11-90BB6AA7E23B}">
+									<ChildrenList>
+										<Action Name="" ID="{810F3795-8457-4C70-9131-74DF541FB2CB}" ShortID="720847551">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_Footstep" ID="{0FF5DE58-1586-4ED1-855A-A4B3684B8FE1}" WorkUnitID="{43F2AAF9-C54B-4047-8EAA-705053B175C4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Player_Land" ID="{38E85E96-ED2B-49A3-9E6D-9EB06425A253}">
+									<ChildrenList>
+										<Action Name="" ID="{4FD33604-E814-4B92-B2AE-3CD898A07D26}" ShortID="420994358">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_Land_Breath" ID="{8128AB78-D693-4020-93BC-CD6582552659}" WorkUnitID="{43F2AAF9-C54B-4047-8EAA-705053B175C4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Event Name="Player_Jump" ID="{3439B042-77BA-4DD2-8DF1-B911000C74D7}"/>
 								<Folder Name="Ladder" ID="{63215165-3A1F-4E37-82A8-12DF9DBCDA1B}" ShortID="413580176">
 									<ChildrenList>

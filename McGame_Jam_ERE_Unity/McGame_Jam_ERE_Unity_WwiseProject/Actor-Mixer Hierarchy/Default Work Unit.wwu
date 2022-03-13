@@ -1,6 +1,802 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{43F2AAF9-C54B-4047-8EAA-705053B175C4}" SchemaVersion="103">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{43F2AAF9-C54B-4047-8EAA-705053B175C4}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{43F2AAF9-C54B-4047-8EAA-705053B175C4}" PersistMode="Standalone">
+			<ChildrenList>
+				<ActorMixer Name="UI" ID="{F9F4D4F9-BA55-4039-AC61-DAE0F6FC6CF4}" ShortID="3426916">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="19"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+						</Reference>
+					</ReferenceList>
+					<ObjectLists/>
+				</ActorMixer>
+				<ActorMixer Name="Game Elements" ID="{24D5078D-1F04-4F98-9CF9-56350266E0A2}" ShortID="174711156">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="4"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+						</Reference>
+					</ReferenceList>
+					<ObjectLists/>
+				</ActorMixer>
+				<ActorMixer Name="Player" ID="{0374CB1A-4503-4499-8660-547A168DC5FE}" ShortID="961704935">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="12"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+						<Property Name="UserAuxSendVolume0" Type="Real64">
+							<ValueList>
+								<Value>-10</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-8</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX_Bus" ID="{C0855ED6-4447-4FCC-BDFA-57288ABE5C54}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+						</Reference>
+						<Reference Name="UserAuxSend0">
+							<ObjectRef Name="Room_Reverb" ID="{F1121EC8-7EDE-4595-AEB1-F479E82A70CF}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<ActorMixer Name="Movement" ID="{3489C359-02A7-4223-867E-25961756B02F}" ShortID="839035155">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="Player_Footstep" ID="{0FF5DE58-1586-4ED1-855A-A4B3684B8FE1}" ShortID="885747773">
+									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>15</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{D7793DF6-71E2-4ACE-B3B7-803621A2A8F5}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="50"/>
+															<Property Name="Min" Type="Real64" Value="-50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-12</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Player_Footstep-004" ID="{39F72B7B-BFFA-4149-9896-ABCE619DFD25}" ShortID="73648961">
+											<PropertyList>
+												<Property Name="Weight" Type="Real64">
+													<ValueList>
+														<Value>20</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Player_Footstep-004" ID="{6790A198-B812-4038-87DB-F85458A0BF53}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.382539136136384"/>
+														<Property Name="FadeOutShape" Type="int16" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.843231429117832"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Player_Footstep-004.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="131501337"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Player_Footstep-004" ID="{6790A198-B812-4038-87DB-F85458A0BF53}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Player_Footstep-001" ID="{F826F78A-427C-4E4B-BC4D-3611A6358B35}" ShortID="211801112">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Player_Footstep-001" ID="{AAD9EF15-710C-4BB2-A4CE-B2558B678A70}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.659584733491789"/>
+														<Property Name="FadeOutShape" Type="int16" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.814893929459334"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Player_Footstep-001.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="378955397"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Player_Footstep-001" ID="{AAD9EF15-710C-4BB2-A4CE-B2558B678A70}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Player_Footstep-002" ID="{0D03998A-2957-4F22-BA5F-C00DDCB7668F}" ShortID="75227123">
+											<PropertyList>
+												<Property Name="Weight" Type="Real64">
+													<ValueList>
+														<Value>38</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Player_Footstep-002" ID="{3097A42F-B3C7-4816-B6F0-EB65F43CC66F}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.292167240390132"/>
+														<Property Name="FadeOutShape" Type="int16" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.514678714859438"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Player_Footstep-002.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="869781254"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Player_Footstep-002" ID="{3097A42F-B3C7-4816-B6F0-EB65F43CC66F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Player_Footstep-005" ID="{BF0AF51C-BC02-4C93-AB71-F251526D0C11}" ShortID="489787642">
+											<PropertyList>
+												<Property Name="Weight" Type="Real64">
+													<ValueList>
+														<Value>42</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Player_Footstep-005" ID="{38A3CA38-D61E-43C1-8B91-8ADF38902740}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.518502240253531"/>
+														<Property Name="FadeOutShape" Type="int16" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.743252260743655"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Player_Footstep-005.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="905551301"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Player_Footstep-005" ID="{38A3CA38-D61E-43C1-8B91-8ADF38902740}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Player_Footstep-003" ID="{F3343C65-E869-4B01-A599-E89B6A4B79C9}" ShortID="449066833">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Player_Footstep-003" ID="{34304B46-2824-45EE-AE57-57B817F9EFDC}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.41296000327842"/>
+														<Property Name="FadeOutShape" Type="int16" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.659220555692156"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Player_Footstep-003.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="99982787"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Player_Footstep-003" ID="{34304B46-2824-45EE-AE57-57B817F9EFDC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Player_Jump_Breath" ID="{9A4AB439-19CE-4DCE-B66B-62BEDCA0D718}" ShortID="869562736">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>50</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{D9700892-D352-4F1E-A493-A04CDE44E9C3}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="50"/>
+															<Property Name="Min" Type="Real64" Value="-50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Amelie_Breathing_Lift1" ID="{52D09F89-3F2C-4F47-8D34-D86C3D769887}" ShortID="199552932">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Amelie_Breathing_Lift1" ID="{06D90B03-6711-4292-9C3A-45D838B5A83C}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.423571838373904"/>
+														<Property Name="FadeOutShape" Type="int16" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.677714941398246"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Amelie_Breathing_Lift1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="980597302"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Amelie_Breathing_Lift1" ID="{06D90B03-6711-4292-9C3A-45D838B5A83C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Amelie_Breathing_Lift2" ID="{167C97C0-F886-4AAE-B8AF-B0136DEF9EE6}" ShortID="881651647">
+											<PropertyList>
+												<Property Name="Weight" Type="Real64">
+													<ValueList>
+														<Value>26</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Amelie_Breathing_Lift2" ID="{69F83BEF-5073-4890-A668-9A6857FE412A}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0547934595524957"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.328760757314974"/>
+														<Property Name="FadeOutShape" Type="int16" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.606641873616917"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.11543828374723"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Amelie_Breathing_Lift2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="788249717"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Amelie_Breathing_Lift2" ID="{69F83BEF-5073-4890-A668-9A6857FE412A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Amelie_Breathing_Lift3" ID="{B5DF212C-1ED3-4894-8580-35C9FDD68C77}" ShortID="123210183">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Amelie_Breathing_Lift3" ID="{FB853EFE-6D32-40C3-8623-25CAF081440E}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.34857361418463"/>
+														<Property Name="FadeOutShape" Type="int16" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.46391047181925"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Amelie_Breathing_Lift3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="721995506"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Amelie_Breathing_Lift3" ID="{FB853EFE-6D32-40C3-8623-25CAF081440E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Amelie_Breathing_Lift4" ID="{A13C4A5D-01FA-499D-8D09-AE5CFC8FBD2E}" ShortID="613784224">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ValueList>
+														<Value>22</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Amelie_Breathing_Lift4" ID="{5210FE17-BA92-4EAB-86DE-D47AECBF0A49}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0562567958910472"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.509620386307133"/>
+														<Property Name="FadeOutShape" Type="int16" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.0694936890418818"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.698246113706527"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Amelie_Breathing_Lift4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="708851613"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Amelie_Breathing_Lift4" ID="{5210FE17-BA92-4EAB-86DE-D47AECBF0A49}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Player_LandHard_Breath" ID="{8EDFE0B2-A0B0-47A8-866A-6234223F259E}" ShortID="49809683">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>50</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{2C4D69FD-08A9-4BE8-8E7E-8032287DEB6B}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="50"/>
+															<Property Name="Min" Type="Real64" Value="-50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Amelie_Breathing_Land2" ID="{CDC41256-BFE2-4CCA-B0BC-1016E073B4AB}" ShortID="335269315">
+											<PropertyList>
+												<Property Name="UserAuxSendVolume0" Type="Real64">
+													<ValueList>
+														<Value>-10</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX_Bus" ID="{C0855ED6-4447-4FCC-BDFA-57288ABE5C54}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="Room_Reverb" ID="{F1121EC8-7EDE-4595-AEB1-F479E82A70CF}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Amelie_Breathing_Land2" ID="{C15C6716-C580-4FEA-839B-78D6ACDA0CB3}">
+													<Language>SFX</Language>
+													<AudioFile>Amelie_Breathing_Land2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="297462361"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Amelie_Breathing_Land2" ID="{C15C6716-C580-4FEA-839B-78D6ACDA0CB3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Amelie_Breathing_Land3" ID="{FC474E17-D4E5-4221-B0AC-4DE1C9419361}" ShortID="688578420">
+											<PropertyList>
+												<Property Name="UserAuxSendVolume0" Type="Real64">
+													<ValueList>
+														<Value>-10</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX_Bus" ID="{C0855ED6-4447-4FCC-BDFA-57288ABE5C54}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="Room_Reverb" ID="{F1121EC8-7EDE-4595-AEB1-F479E82A70CF}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Amelie_Breathing_Land3" ID="{ED9C40A7-7451-4C0B-89F5-F6E2B1C2E71C}">
+													<Language>SFX</Language>
+													<AudioFile>Amelie_Breathing_Land3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="463382221"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Amelie_Breathing_Land3" ID="{ED9C40A7-7451-4C0B-89F5-F6E2B1C2E71C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Amelie_Breathing_Land1" ID="{3BDBCBAC-B1F6-4B79-B460-0A935366F97B}" ShortID="468968156">
+											<PropertyList>
+												<Property Name="UserAuxSendVolume0" Type="Real64">
+													<ValueList>
+														<Value>-10</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX_Bus" ID="{C0855ED6-4447-4FCC-BDFA-57288ABE5C54}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="Room_Reverb" ID="{F1121EC8-7EDE-4595-AEB1-F479E82A70CF}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Amelie_Breathing_Land1" ID="{82015344-6260-4057-9A49-28F836428E0F}">
+													<Language>SFX</Language>
+													<AudioFile>Amelie_Breathing_Land1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="485303721"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Amelie_Breathing_Land1" ID="{82015344-6260-4057-9A49-28F836428E0F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Amelie_Breathing_Land4" ID="{91C90F40-4532-425F-A929-3542FFF002DE}" ShortID="369002413">
+											<PropertyList>
+												<Property Name="UserAuxSendVolume0" Type="Real64">
+													<ValueList>
+														<Value>-10</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX_Bus" ID="{C0855ED6-4447-4FCC-BDFA-57288ABE5C54}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="Room_Reverb" ID="{F1121EC8-7EDE-4595-AEB1-F479E82A70CF}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Amelie_Breathing_Land4" ID="{3BC66942-CE88-44D3-9253-7B336E08CE53}">
+													<Language>SFX</Language>
+													<AudioFile>Amelie_Breathing_Land4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="728721322"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Amelie_Breathing_Land4" ID="{3BC66942-CE88-44D3-9253-7B336E08CE53}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Player_Land_Breath" ID="{8128AB78-D693-4020-93BC-CD6582552659}" ShortID="503253793">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>50</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{53686373-2979-4517-BC2B-E0DC40494A3A}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="50"/>
+															<Property Name="Min" Type="Real64" Value="-50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="UserAuxSendVolume0" Type="Real64">
+											<ValueList>
+												<Value>-10</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX_Bus" ID="{C0855ED6-4447-4FCC-BDFA-57288ABE5C54}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+										</Reference>
+										<Reference Name="UserAuxSend0">
+											<ObjectRef Name="Room_Reverb" ID="{F1121EC8-7EDE-4595-AEB1-F479E82A70CF}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Amelie_Breathing_Lift3" ID="{4649E492-275D-435E-B034-E989DD7D567E}" ShortID="423019547">
+											<PropertyList>
+												<Property Name="UserAuxSendVolume0" Type="Real64">
+													<ValueList>
+														<Value>-10</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX_Bus" ID="{C0855ED6-4447-4FCC-BDFA-57288ABE5C54}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="Room_Reverb" ID="{F1121EC8-7EDE-4595-AEB1-F479E82A70CF}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Amelie_Breathing_Lift3" ID="{CC62B7E0-4F08-4ED7-BDE7-8706DEECF3AC}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.123025981476928"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.215295467584624"/>
+														<Property Name="FadeOutShape" Type="int16" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.1922280960577"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.57924732945387"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Amelie_Breathing_Lift3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="198359076"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Amelie_Breathing_Lift3" ID="{CC62B7E0-4F08-4ED7-BDE7-8706DEECF3AC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Amelie_Breathing_Lift2" ID="{289543A6-5A0C-4366-956C-6E5CCC5EB3DE}" ShortID="1032023319">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ValueList>
+														<Value>22</Value>
+													</ValueList>
+												</Property>
+												<Property Name="UserAuxSendVolume0" Type="Real64">
+													<ValueList>
+														<Value>-10</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Weight" Type="Real64">
+													<ValueList>
+														<Value>26</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX_Bus" ID="{C0855ED6-4447-4FCC-BDFA-57288ABE5C54}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="Room_Reverb" ID="{F1121EC8-7EDE-4595-AEB1-F479E82A70CF}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Amelie_Breathing_Lift2" ID="{900C7B5C-FB78-44A9-BCFD-F44F9F05CD5E}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.219173838209983"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.328760757314974"/>
+														<Property Name="FadeOutShape" Type="int16" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.908005901155643"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.37375030735186"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Amelie_Breathing_Lift2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="219985749"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Amelie_Breathing_Lift2" ID="{900C7B5C-FB78-44A9-BCFD-F44F9F05CD5E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Amelie_Breathing_Lift1" ID="{3832307B-3AE0-4BD8-B816-65E8776D6AF5}" ShortID="286698530">
+											<PropertyList>
+												<Property Name="UserAuxSendVolume0" Type="Real64">
+													<ValueList>
+														<Value>-10</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX_Bus" ID="{C0855ED6-4447-4FCC-BDFA-57288ABE5C54}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="Room_Reverb" ID="{F1121EC8-7EDE-4595-AEB1-F479E82A70CF}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Amelie_Breathing_Lift1" ID="{03715DDB-ABA4-4461-BF17-7E275466C7E9}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.142955495451192"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.288558314892222"/>
+														<Property Name="FadeOutShape" Type="int16" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.415629866404393"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.07481353987378"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Amelie_Breathing_Lift1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="595327766"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="Amelie_Breathing_Lift1" ID="{03715DDB-ABA4-4461-BF17-7E275466C7E9}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+							</ChildrenList>
+							<ObjectLists/>
+						</ActorMixer>
+					</ChildrenList>
+					<ObjectLists/>
+				</ActorMixer>
+				<ActorMixer Name="Ambient" ID="{5A0918AE-0B0E-4A8D-BCCD-C4CA039E7D30}" ShortID="860764895">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="15"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0A332AFF-B82E-4DEC-A024-5BD857CA0F1E}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{85205B20-4A7E-4E6D-8263-1E4D574F6652}"/>
+						</Reference>
+					</ReferenceList>
+					<ObjectLists/>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>
